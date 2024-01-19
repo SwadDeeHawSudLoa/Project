@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <h1>Hello World</h1>
+      <div className="bg-[url('/img/img.png')]">
+  
+</div>
     </>
   );
 }
