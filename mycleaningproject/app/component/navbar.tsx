@@ -16,7 +16,7 @@ export default function Navbar() {
     </button>
         <div className="ml-48 hidden w-full md:flex md:w-auto" id="navbar-default">
           <ul className="font-medium flex space-x-8 rtl:space-x-reverse border border-gray-100 rounded-lg bg-gray-50 mt-4 md:mt-0 md:border-0 md:bg-white dark:bg-yellow-800 md:dark:bg-yellow-500 dark:border-gray-700">
-            <li className="hover:text-sky-700 hover:font-bold flex items-center justify-center">
+            <li className=" hover:text-sky-700 hover:font-bold flex items-center justify-center">
               <a href="/" className="block py-2 px-3">About</a>
             </li>
             <li className="hover:text-sky-700 hover:font-bold flex items-center justify-center">
@@ -32,10 +32,10 @@ export default function Navbar() {
           
          
         </div> 
-        <div className="sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
+        <div className="hover:bg-orange-600 sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
             <ul> 
                 <li>
-                <a href="/login"className="font-bold hover:text-sky-700 hover:font-bold " >Login</a>
+                <a href="/login"className="font-bold hover:text-black-700 hover:font-bold " >Login</a>
                 </li>
             </ul>
            

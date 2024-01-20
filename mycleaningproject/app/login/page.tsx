@@ -25,6 +25,10 @@ export default function Home() {
               placeholder="Password"
             />
           </div>
+          <div >
+            <button className='hover:bg-orange-600 sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 md:dark:bg-yellow-500 mt-5 rounded-lg shadow-xl dark:bg-yellow-500 w-full '>Login</button>
+            
+          </div>
         </div>
       </div>
     </div>
