@@ -3,10 +3,10 @@ import React from "react";
 export default function Navbar() {
   return (
     <nav className="bg-white border-gray-200 dark:bg-blue-900 " >
-      <div className=" max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="md:space-x-6 max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/keqing/sticker_7.png?4996771f86fd38e818153e52edcc458f" className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MyCleaningService</span>
+          <span className="md:text-base self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MyCleaningService</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
         <span className="sr-only">Open main menu</span>
@@ -32,7 +32,7 @@ export default function Navbar() {
           
          
         </div> 
-        <div className=" max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
+        <div className="sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
             <ul> 
                 <li>
                 <a href="/login"className="font-bold hover:text-sky-700 hover:font-bold " >Login</a>
