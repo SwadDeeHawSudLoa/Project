@@ -16,38 +16,30 @@ export default function Navbar() {
     </button>
         <div className="ml-48 hidden w-full md:flex md:w-auto" id="navbar-default">
           <ul className="md:text-xs font-medium flex space-x-8 rtl:space-x-reverse border border-gray-100 rounded-lg bg-gray-50 mt-4 md:mt-0 md:border-0 md:bg-white dark:bg-yellow-800 md:dark:bg-yellow-500 dark:border-gray-700">
-            <li className=" hover:text-sky-700 hover:font-bold flex items-center justify-center">
+            <li className="hover:bg-orange-600 rounded-lg  hover:font-bold  flex items-center justify-center">
               <a href="/" className="block py-2 px-3">About</a>
             </li>
-            <li className="hover:text-sky-700 hover:font-bold flex items-center justify-center">
+            <li className="hover:bg-orange-600 rounded-lg   hover:font-bold flex items-center justify-center">
               <a href="#" className="block py-2 px-3">Services</a>
             </li>
-            <li className="hover:text-sky-700 hover:font-bold flex items-center justify-center">
+            <li className="hover:bg-orange-600 rounded-lg   hover:font-bold flex items-center justify-center">
               <a href="#" className="block py-2 px-3">Pricing</a>
             </li>
-            <li className="text-center hover:text-sky-700 hover:font-bold flex items-center justify-center">
+            <li className="hover:bg-orange-600 rounded-lg  text-center  hover:font-bold flex items-center justify-center">
               <a href="#" className="block py-2 px-3">Contact</a>
             </li>
           </ul>
           
          
-        </div> 
-        <div className="md:text-xs hover:bg-orange-600 sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
-            <ul> 
-                <li>
-                <a href="/login"className="font-bold hover:text-black-700 hover:font-bold " >Login</a>
-                </li>
-            </ul>
-           
-          </div>
-          <div className="md:text-xs sm:left-8 hover:bg-orange-600 sm:flex sm:items-center sm:dark:bg-yellow-500 sm:rounded-lg max-w-screen-xl flex items-center justify-between mx-auto p-2 rounded-lg md:dark:bg-yellow-500 "id="navbar-default">
-            <ul> 
-                <li>
-                <a href="/signUp"className="font-bold hover:text-black-700 hover:font-bold " >signUp</a>
-                </li>
-            </ul>
-           
-          </div>
+        </div > 
+        <div className="rounded-lg sm:rounded sm:bg-yellow-500 md:dark:bg-yellow-500 md:text-xs flex space-x-4">
+  <div className="hover:bg-orange-600 rounded-lg flex items-center justify-center  p-2">
+    <a href="/login" className="font-bold hover:text-black-700 hover:font-bold">Login</a>
+  </div>
+  <div className="hover:bg-orange-600 flex items-center justify-center rounded-lg p-2">
+    <a href="/signUp" className="font-bold hover:text-black-700 hover:font-bold">SignUp</a>
+  </div>
+</div>
       </div>
     </nav>
   );
