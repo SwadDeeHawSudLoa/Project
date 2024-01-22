@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-blue-400 " >
+    <nav className="bg-transparent shadow-2xl border-gray-200 bg-blue-400 " >
       <div className="2xl:space-x-2 sm:space-x-2  md:space-x-6 max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/keqing/sticker_7.png?4996771f86fd38e818153e52edcc458f" className="h-8" alt="Flowbite Logo" />
