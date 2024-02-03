@@ -8,7 +8,7 @@ export default function Home() {
       <NavBar />
       <div className='bg-slate-300'>
       <div className="flex justify-center items-center h-screen w-auto ">
-      <div className="rounded-lg shadow-xl bg-red-200 w-full md:w-5/12  p-4">
+      <div className="rounded-lg shadow-xl bg-red-200  sm:w-1/10 md:w-5/12 w-1/2 p-4">
         <div className="flex flex-col items-center">
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">Username</label>
