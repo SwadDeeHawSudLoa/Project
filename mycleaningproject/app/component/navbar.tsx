@@ -15,7 +15,7 @@ export default function Navbar() {
         </svg>
     </button>
         <div className="ml-48 hidden w-full md:flex md:w-auto" id="navbar-default">
-          <ul className="md:text-xs font-medium flex space-x-8 rtl:space-x-reverse border border-gray-100 rounded-lg bg-gray-50 mt-4 md:mt-0 md:border-0 md:bg-white dark:bg-yellow-800 md:dark:bg-yellow-500 dark:border-gray-700">
+          <ul className="md:text-xs font-medium flex space-x-8 rtl:space-x-reverse border border-gray-100 rounded-lg mt-4 md:mt-0 md:border-0  bg-yellow-800 md:bg-yellow-500 dark:border-gray-700">
             <li className="hover:bg-orange-600 rounded-lg  hover:font-bold  flex items-center justify-center">
               <a href="/" className="block py-2 px-3">About</a>
             </li>
