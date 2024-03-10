@@ -36,9 +36,6 @@ export default function Navbar() {
   <div className="hover:bg-orange-600 rounded-lg flex items-center justify-center  p-2">
     <a href="/login" className="font-bold hover:text-black-700 hover:font-bold">Login</a>
   </div>
-  <div className="hover:bg-orange-600 flex items-center justify-center rounded-lg p-2">
-    <a href="/signUp" className="font-bold hover:text-black-700 hover:font-bold">SignUp</a>
-  </div>
 </div>
       </div>
     </nav>
