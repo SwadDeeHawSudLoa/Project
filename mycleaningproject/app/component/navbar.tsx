@@ -25,7 +25,7 @@ export default function Navbar() {
           <svg className="w-5 h-5" aria-hidden="true"xmlns="http://www.w3.org/2000/svg"fill="none"viewBox="0 0 17 14">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"strokeWidth="2"d="M1 1h15M1 7h15M1 13h15"/></svg></button>
         <div className="hidden md:flex space-x-4">
-          <div className="rounded-lg bg-yellow-500 flex items-center justify-center w-32 h-10">
+          <div className="rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
             <div className="hover:bg-orange-600 rounded-lg flex items-center justify-center p-1 w-full h-full">
               <a href="/signUp" className="font-bold hover:text-black-700 hover:font-bold text-xs">
               เเจ้งพบของหาย
@@ -33,7 +33,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="rounded-lg bg-yellow-500 flex items-center justify-center w-32 h-10">
+          <div className="rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
             <div className="hover:bg-orange-600 rounded-lg flex items-center justify-center p-1 w-full h-full">
               <a href="/login" className="font-bold hover:text-black-700 hover:font-bold text-xs">
                 Login
