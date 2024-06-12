@@ -1,10 +1,8 @@
-"use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import NavBar from '@/app/component/navbar'; 
-import FilterSearch from './component/FilterSearch';
-import Modal from './component/Modal';
+import FilterSearch from '../component/FilterSearch';
 
 const posts = [
   {
@@ -154,7 +152,7 @@ const posts = [
   {
     id: "17",
     img: "/ipad.jpg",
-    name: "test17",
+    name: "test16",
     place: "school",
     category: "mno",
     status: "active",
@@ -164,8 +162,6 @@ const posts = [
 
 const PostList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPost, setSelectedPost] = useState(null);
   const postsPerPage = 8;
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -173,16 +169,6 @@ const PostList = () => {
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   const totalPages = Math.ceil(posts.length / postsPerPage);
-
-  const handleButtonClick = (post: React.SetStateAction<null>) => {
-    setSelectedPost(post);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedPost(null);
-  };
 
   return (
     <>
@@ -201,19 +187,16 @@ const PostList = () => {
                   className="rounded-t-lg"
                 />
               </div>
-              <div className='flex space-x-2'>
+              <div className='flex flex space-x-2'>
                 <h2 className="text-xl font-bold">{post.name}</h2>
                 <p className="text-gray-600">{post.place}</p>
-                <p className="text-gray-600">{post.category}</p>
+                <p className="text-gray-600">{post.category}</p> 
               </div>
-              <button 
-                onClick={() => handleButtonClick(post)}
-                className={`text-white ${
-                  post.status === 'get' ? 'bg-orange-500' :
-                  post.status === 'active' ? 'bg-blue-500' :
-                  post.status === 'inside' ? 'bg-green-500' : ''
-                } rounded-md py-1 px-2`}
-              >
+              <button className={`text-white ${
+                post.status === 'get' ? 'bg-orange-500' :
+                post.status === 'active' ? 'bg-blue-500' :
+                post.status === 'inside' ? 'bg-green-500' : ''
+              } rounded-md py-1 px-2`}>
                 {post.status}
               </button>
             </div>
@@ -233,13 +216,6 @@ const PostList = () => {
           ))}
         </div>
       </div>
-      {selectedPost && (
-        <Modal 
-          show={showModal} 
-          onClose={handleCloseModal} 
-          post={selectedPost}
-        />
-      )}
     </>
   );
 };
