@@ -13,7 +13,7 @@ const posts = [
     name: "test",
     place: "home",
     category: "abs",
-    status: "inside",
+    status: "สถานะอยู่ในคลัง",
     des: "Description for post 1"
   },
   {
@@ -22,7 +22,7 @@ const posts = [
     name: "example",
     place: "office",
     category: "xyz",
-    status: "get",
+    status: "สถานะถูกรับไปเเล้ว",
     des: "Description for post 2"
   },
   {
@@ -31,7 +31,7 @@ const posts = [
     name: "exawdwdwdwdwdwdmple",
     place: "office",
     category: "xyz",
-    status: "get",
+    status: "สถานะถูกรับไปเเล้ว",
     des: "Description for post 3"
   },
   {
@@ -40,7 +40,7 @@ const posts = [
     name: "sample",
     place: "park",
     category: "abc",
-    status: "inside",
+    status: "สถานะอยู่ในคลัง",
     des: "Description for post 4"
   },
   {
@@ -49,7 +49,7 @@ const posts = [
     name: "demo",
     place: "gym",
     category: "def",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 5"
   },
   {
@@ -58,7 +58,7 @@ const posts = [
     name: "mock",
     place: "library",
     category: "ghi",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 6"
   },
   {
@@ -67,7 +67,7 @@ const posts = [
     name: "example7",
     place: "cafe",
     category: "jkl",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 7"
   },
   {
@@ -76,7 +76,7 @@ const posts = [
     name: "test8",
     place: "school",
     category: "mno",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 8"
   },
   {
@@ -85,7 +85,7 @@ const posts = [
     name: "test9",
     place: "home",
     category: "abs",
-    status: "inside",
+    status: "สถานะอยู่ในคลัง",
     des: "Description for post 9"
   },
   {
@@ -94,7 +94,7 @@ const posts = [
     name: "example10",
     place: "office",
     category: "xyz",
-    status: "get",
+    status: "สถานะถูกรับไปเเล้ว",
     des: "Description for post 10"
   },
   {
@@ -103,7 +103,7 @@ const posts = [
     name: "example11",
     place: "office",
     category: "xyz",
-    status: "get",
+    status: "สถานะถูกรับไปเเล้ว",
     des: "Description for post 11"
   },
   {
@@ -112,7 +112,7 @@ const posts = [
     name: "sample12",
     place: "park",
     category: "abc",
-    status: "inside",
+    status: "สถานะอยู่ในคลัง",
     des: "Description for post 12"
   },
   {
@@ -121,7 +121,7 @@ const posts = [
     name: "demo13",
     place: "gym",
     category: "def",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 13"
   },
   {
@@ -130,7 +130,7 @@ const posts = [
     name: "mock14",
     place: "library",
     category: "ghi",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 14"
   },
   {
@@ -139,7 +139,7 @@ const posts = [
     name: "example15",
     place: "cafe",
     category: "jkl",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 15"
   },
   {
@@ -148,7 +148,7 @@ const posts = [
     name: "test16",
     place: "school",
     category: "mno",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 16"
   },
   {
@@ -157,7 +157,7 @@ const posts = [
     name: "test17",
     place: "school",
     category: "mno",
-    status: "active",
+    status: "สถานะไม่อยู่ในคลัง",
     des: "Description for post 17"
   }
 ];
@@ -209,9 +209,9 @@ const PostList = () => {
               <button 
                 onClick={() => handleButtonClick(post)}
                 className={`text-white ${
-                  post.status === 'get' ? 'bg-orange-500' :
-                  post.status === 'active' ? 'bg-blue-500' :
-                  post.status === 'inside' ? 'bg-green-500' : ''
+                  post.status === 'สถานะถูกรับไปเเล้ว' ? 'bg-orange-500' :
+                  post.status === 'สถานะไม่อยู่ในคลัง' ? 'bg-red-500' :
+                  post.status === 'สถานะอยู่ในคลัง' ? 'bg-green-500' : ''
                 } rounded-md py-1 px-2`}
               >
                 {post.status}

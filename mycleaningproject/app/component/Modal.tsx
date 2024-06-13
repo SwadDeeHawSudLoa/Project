@@ -38,22 +38,31 @@ const Modal = ({ show, onClose, post }) => {
 
 
     <div className="flex justify-center mt-4">
-      <button className='bg-green-400 text-white py-2 px-4 rounded'>ติดต่อคนพบของหาย</button>
+      <button className='bg-green-400 text-gray-950  py-2 px-4 rounded'>ติดต่อคนพบของหาย</button>
+      
     </div>
     <div className="flex items-center justify-between mt-4">
-      <button 
-        className="bg-blue-300 text-blue-500 py-2 px-4 rounded"
-      >
-        ดูหมุด
-      </button> 
-      <p className={`text-white ${
-          post.status === 'get' ? 'text-orange-500' :
-          post.status === 'active' ? 'text-blue-500' :
-          post.status === 'inside' ? 'text-green-500' : ''
-        } rounded-md py-1 px-2`} style={{ marginLeft: 'auto' }}>
-        <strong>สถานะ:</strong> {post.status}
-      </p>
+  <button className="bg-blue-300 text-blue-500 py-2 px-4 rounded">
+    ดูหมุด
+  </button>
+  {post.status === 'สถานะถูกรับไปเเล้ว' && (
+    <div className="flex-1 flex justify-center">
+      <button className="bg-blue-400 text-gray-950 py-2 px-4 rounded">
+        ดูรูปหลักฐาน
+      </button>
     </div>
+  )}
+  <p className={`${
+      post.status === 'สถานะถูกรับไปเเล้ว' ? 'text-orange-500' :
+      post.status === 'สถานะไม่อยู่ในคลัง' ? 'text-red-500' :
+      post.status === 'สถานะอยู่ในคลัง' ? 'text-green-500' : ''
+    } rounded-md py-1 px-2`} style={{ marginLeft: 'auto' }}>
+    <strong>สถานะ:</strong> {post.status}
+  </p>
+</div>
+
+
+
   </div>
 </div>
 
