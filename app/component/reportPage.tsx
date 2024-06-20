@@ -1,49 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ReportPage = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-  };
-
-  if (isSubmitted) {
-    return (
-      <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
-        <div className="bg-white p-6 rounded-lg w-3/4 max-w-lg text-center">
-          <button 
-            onClick={() => setIsSubmitted(false)} 
-            className="text-black text-xl rounded absolute top-2 right-2"
-          >
-
-            
-          </button>
-          <div className="flex justify-end">
-          <button 
-            onClick={() => window.history.back()} 
-            className="text-black text-xl rounded"
-          >
-            ×
-          </button>
-        </div>
-        
-          <h2 className="text-xl font-bold mb-4 text-green-600">ส่งเสร็จสิ้น!</h2>
-          <p className="text-black mb-4">โปรดนำของหายไปให้เจ้าหน้าที่ที่ SC1</p>
-          <p className="text-gray-700 mb-4">
-            หากไม่ทราบว่าต้องนำของไปไว้ที่ส่วนไหนของ SC1 โปรดกดปุ่ม “ดูตำแหน่งSC1” ด้านล่าง
-          </p>
-          <button
-            type="button"
-            className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            ดูตำแหน่ง SC1
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg w-3/4 max-w-lg">
@@ -58,7 +15,7 @@ const ReportPage = () => {
 
         <h2 className="text-xl font-bold mb-4 text-center">แจ้งพบของสูญหาย</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               ชื่อสิ่งของ
@@ -133,9 +90,6 @@ const ReportPage = () => {
 };
 
 export default ReportPage;
-
-
-
 
 
 
