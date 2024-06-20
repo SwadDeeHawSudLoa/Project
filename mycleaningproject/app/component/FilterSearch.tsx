@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FilterSearch(){
 return (
-<form className="flex justify-center items-center mt-10 space-x-4">
+<form className=" flex justify-center items-center mt-10 space-x-4">
 <input type="text" name="search" placeholder="ค้นหา..." className="px-4 py-2 border rounded" />
 <select name="category" id="category" className="px-4 py-2 border rounded">
     <option value="">หมวดหมู่</option>

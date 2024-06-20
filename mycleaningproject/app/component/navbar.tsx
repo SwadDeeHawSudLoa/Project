@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="shadow-2xl border-gray-200 bg-blue-400">
+      <nav className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 shadow-2xl border-gray-200 bg-blue-400">
         <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
