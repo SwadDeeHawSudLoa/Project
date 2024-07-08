@@ -1,13 +1,14 @@
-"use client";
+"use client"; // Mark this file as a Client Component
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+
 interface ModalProps {
   isLoggedIn: boolean;
   closeModal: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({isLoggedIn, closeModal }) => {
+const Modal: React.FC<ModalProps> = ({ isLoggedIn, closeModal }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-10 rounded-lg shadow-2xl w-1/3 relative">
@@ -49,9 +50,11 @@ const Modal: React.FC<ModalProps> = ({isLoggedIn, closeModal }) => {
     </div>
   );
 };
+
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -59,13 +62,17 @@ const Navbar: React.FC = () => {
     // Check login state from local storage
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail === 'admin@example.com') {
+      setIsAdmin(true);
+    }
   }, []);
 
   const handleReportClick = () => {
     if (!isLoggedIn) {
       setIsModalOpen(true);
     } else {
-      router.push('/main');
+      router.push('/report');
     }
   };
 
@@ -82,7 +89,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-     <nav className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 shadow-2xl border-gray-200 bg-blue-400">
+      <nav className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 shadow-2xl border-gray-200 bg-blue-400">
         <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
@@ -132,14 +139,17 @@ const Navbar: React.FC = () => {
 
             {isLoggedIn ? (
               <>
-                <div className="hover:bg-orange-600 rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
-                  <a
-                    href="/myposts"
-                    className="font-bold hover:text-black-700 text-xs"
-                  >
-                    โพสต์ของฉัน
-                  </a>
-                </div>
+                {!isAdmin && (
+                  <div className="hover:bg-orange-600 rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
+                    <a
+                      href="/myposts"
+                      className="font-bold hover:text-black-700 text-xs"
+                    >
+                      โพสต์ของฉัน
+                    </a>
+                  </div>
+                )}
+               
                 <div className="relative">
                   <button
                     className="flex items-center space-x-2"
@@ -193,7 +203,6 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
       {isModalOpen && <Modal closeModal={closeModal} isLoggedIn={false} />}
-      
     </>
   );
 };
