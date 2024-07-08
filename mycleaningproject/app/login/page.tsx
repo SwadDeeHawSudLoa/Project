@@ -20,7 +20,11 @@ const Login = () => {
 
       // Redirect to the main page
       router.push('/main');
-    } else {
+    }else if(email === 'admin@example.com' && password === '123'){
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userEmail', email);
+      router.push('/mainAdmin');
+    }else {
       alert('Invalid email or password');
     }
   };

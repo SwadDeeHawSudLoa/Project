@@ -23,7 +23,7 @@ const Modal: React.FC<ModalProps> = ({isLoggedIn, closeModal }) => {
         </h2>
         <div className="flex flex-col items-center">
           <button
-            className="bg-green-400 text-black px-6 py-3 rounded-lg text-lg mb-4"
+            className="bg-green-400 text-black px-6 py-3 rounded-lg text-lg mb-4 hover:bg-green-700"
             onClick={() => {
               window.location.href = "/login";
             }}
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({isLoggedIn, closeModal }) => {
             ดูหมุด
           </button>
           <button
-            className="bg-yellow-400 text-black px-6 py-3 rounded-lg text-lg mb-4 border-black"
+            className="bg-yellow-400 text-black px-6 py-3 rounded-lg text-lg mb-4 border-black hover:bg-yellow-600"
             onClick={() => {
               window.location.href = "/login";
             }}
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
 
             {isLoggedIn ? (
               <>
-                <div className="rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
+                <div className="hover:bg-orange-600 rounded-2xl bg-yellow-500 flex items-center justify-center w-32 h-10">
                   <a
                     href="/myposts"
                     className="font-bold hover:text-black-700 text-xs"
@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   >
                     <img
-                      src="https://example.com/user-avatar.png" // Replace with your user avatar URL
+                      src="/ggg.png" // Replace with your user avatar URL
                       className="h-8 w-8 rounded-full"
                       alt="User Avatar"
                     />
