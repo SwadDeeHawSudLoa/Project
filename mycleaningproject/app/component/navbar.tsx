@@ -2,54 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-
-interface ModalProps {
-  isLoggedIn: boolean;
-  closeModal: () => void;
-}
-
-const Modal: React.FC<ModalProps> = ({ isLoggedIn, closeModal }) => {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-10 rounded-lg shadow-2xl w-1/3 relative">
-        <h1 className="text-3xl font-bold mb-6 text-center">
-          หากคุณต้องการเเจ้งพบของหาย
-          <br />
-          โปรดเข้าสู่ระบบ
-        </h1>
-        <h2 className="text-2xl mb-6 text-center">
-          หากคุณไม่ได้เป็นบุคลากรหรือนักศึกษาใน
-          <br />
-          มหาวิทยาลัยโปรดติดต่อเจ้าหน้าที่ ที่อาคาร SC1
-        </h2>
-        <div className="flex flex-col items-center">
-          <button
-            className="bg-green-400 text-black px-6 py-3 rounded-lg text-lg mb-4 hover:bg-green-700"
-            onClick={() => {
-              window.location.href = "/login";
-            }}
-          >
-            ดูหมุด
-          </button>
-          <button
-            className="bg-yellow-400 text-black px-6 py-3 rounded-lg text-lg mb-4 border-black hover:bg-yellow-600"
-            onClick={() => {
-              window.location.href = "/login";
-            }}
-          >
-            Go to Login
-          </button>
-        </div>
-        <button
-          className="absolute top-2 right-2 text-black px-3 py-2 rounded-full text-lg border-black"
-          onClick={closeModal}
-        >
-          &#x2715;
-        </button>
-      </div>
-    </div>
-  );
-};
+import Modal from './Modal'; // Adjust the import path as needed
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -91,7 +44,10 @@ const Navbar: React.FC = () => {
     <>
       <nav className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 shadow-2xl border-gray-200 bg-blue-400">
         <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <a
+            href={isAdmin ? '/mainAdmin' : '/main'}
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
             <img
               src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/keqing/sticker_7.png?4996771f86fd38e818153e52edcc458f"
               className="h-8"
@@ -149,7 +105,6 @@ const Navbar: React.FC = () => {
                     </a>
                   </div>
                 )}
-               
                 <div className="relative">
                   <button
                     className="flex items-center space-x-2"
@@ -202,7 +157,24 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </nav>
-      {isModalOpen && <Modal closeModal={closeModal} isLoggedIn={false} />}
+      {isModalOpen && (
+        <Modal
+          show={isModalOpen}
+          onClose={closeModal}
+          post={{
+            id: '',
+            img: '',
+            name: '',
+            place: '',
+            category: '',
+            status: '',
+            des: '',
+            username: '',
+            tell: '',
+          }}
+          view="status"
+        />
+      )}
     </>
   );
 };
