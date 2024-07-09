@@ -111,8 +111,7 @@ const PostList: React.FC = () => {
         <Modal
           show={showModal}
           onClose={handleCloseModal}
-          post={selectedPost}
-        />
+          post={selectedPost} view={'status'}        />
       )}
     </>
   );
